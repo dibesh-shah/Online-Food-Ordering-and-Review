@@ -22,7 +22,7 @@
 	<a href="index.php"><img src="images/logo.png" height="80px" width="90px"></a>
 	<br>
 	<br>
-	<h2>Sign in to Food Review</h2>
+	<h2>Sign in to Food Order</h2>
 	<br>
 		<?php
 		if (isset($_GET['success'])) {
@@ -50,7 +50,7 @@
 	<br>
 
 	<div class="create-acc">
-		New to Food Review? <a href="register.php">Create an account.</a>
+		New to Food Order? <a href="register.php">Create an account.</a>
 	</div>
 
 	<br>

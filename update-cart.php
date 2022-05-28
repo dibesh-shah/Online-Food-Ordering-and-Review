@@ -1,10 +1,7 @@
 <?php
         
     session_start();
-    if(!isset($_SESSION['username'],$_SESSION['email'],$_SESSION['userid'])){
-        header('location:login.php');
-        die();
-    }
+   
 
     include('connect.php');
 if(isset($_POST['newquantity'],$_POST['newtotal'],$_POST['oid'])){

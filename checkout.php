@@ -172,7 +172,23 @@
 			<br>
 			<div style="height: auto;border: 1px solid rgba(74, 74, 74, 0.2);padding-bottom: 10px;">
 				<p >DELIVERY DATE AND TIME</p>
-				<label><input type="radio" name="schedule" id="asp" value="asp" style="width: 5%;vertical-align: middle;">As Soon As Possible</label>
+				<?php
+					date_default_timezone_set("Asia/Dhaka");
+					$date = date("h:i:sa"); 
+					$date = strtotime($date);
+					$date = strtotime("-15 minute", $date);
+
+					$open = strtotime("10:00:00am");
+					$close = strtotime("06:00:00pm");
+
+					if($date>= $open && $date<=$close){
+						echo"<label><input type='radio' name='schedule' id='asp' value='asp' style='width: 5%;vertical-align: middle;'>As Soon As Possible</label>";
+					}
+					else{
+						echo"<label><input type='radio' name='schedule' id='asp' value='asp' disabled style='width: 5%;vertical-align: middle;'>As Soon As Possible  <span class='er'> (Delivery Service is closed at this moment)</span></label>";
+					}
+
+				?> 
 				<br><br>
 				<label><input type="radio" name="schedule" id="ldt" style="width: 5%;vertical-align: middle;">Schedule Delivery For Later Date/Time</label>
 				<br>
@@ -182,7 +198,11 @@
 						<span>Date<span class="er" id="dateerror"></span></span><br>
 						<select name="seldate" id="seldate">
 							<option disabled="" selected="">Select Date</option>
-							<option><?php echo date("Y-m-d")?></option>
+							<?php 
+								if($date<=$close){
+									echo "<option>".date("Y-m-d")."</option>";
+								}
+							?>
 							<option><?php echo date('Y-m-d', strtotime("+1 day"));?></option>
 							<option><?php echo date('Y-m-d', strtotime("+2 day"));?></option>
 							<option><?php echo date('Y-m-d', strtotime("+3 day"));?></option>

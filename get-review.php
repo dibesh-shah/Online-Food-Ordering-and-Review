@@ -1,10 +1,7 @@
 <?php 
 	include('connect.php'); 
 	session_start();
-	if(!isset($_SESSION['username'],$_SESSION['email'],$_SESSION['userid'])){
-		header('location:login.php');
-		die();
-	}
+	
 
 if(isset($_POST['food'])){
 	$food=$_POST['food'];

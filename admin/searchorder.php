@@ -22,9 +22,10 @@
             margin:10px 30px;
             height: 80px;
             padding: 2%;
-            border-radius: 10px;
-            background-image: linear-gradient(to right top, #83999b, #87a1a9, #8ea7b8, #9badc5, #adb1d0);
-            color: white;
+            /*background-image: linear-gradient(to right top, #83999b, #87a1a9, #8ea7b8, #9badc5, #adb1d0);*/
+            border-top: 1px solid rgba(74, 74, 74, 0.35);
+            border-bottom: 1px solid rgba(74, 74, 74, 0.35);
+            color: black;
        }
 
        .btngroup input{
@@ -33,10 +34,10 @@
             padding-left: 10px;
             font-size: 15px;
             border-radius: 5px;
-            border: 1px solid white;
+            border: 1px solid black;
             
             background:transparent;
-            color: white;
+            color: black;
        }
 
        .btngroup button{
@@ -49,11 +50,12 @@
        }
 
        .orderdisplay{
-            min-height: 65vh;
+            height: auto;
             margin: 10px 30px;
             padding: 1% 2%;
-            background-image: linear-gradient(to right top, #83999b, #87a1a9, #8ea7b8, #9badc5, #adb1d0);
-            border-radius: 10px;
+            /*background-image: linear-gradient(to right top, #83999b, #87a1a9, #8ea7b8, #9badc5, #adb1d0);*/
+            border-top: 1px solid rgba(74, 74, 74, 0.35);
+            border-bottom: 1px solid rgba(74, 74, 74, 0.35);
             display: none;
        }
 

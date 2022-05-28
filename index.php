@@ -55,7 +55,7 @@
 
 			</div>
 
-			<div class="rimage "><img src="images/image1.png"  id="image"></div>
+			<div class="rimage " ><img src="images/image1.png"  id="image"></div>
 
 		</div>
 		</section>
@@ -69,7 +69,7 @@
 			<br>
 			<?php
 
-			$q = "SELECT cid,image_name FROM Category WHERE featured='Yes' LIMIT 8";
+			$q = "SELECT cid,image_name FROM category WHERE featured='Yes' LIMIT 8";
 
 			$res = mysqli_query($con,$q);
 
