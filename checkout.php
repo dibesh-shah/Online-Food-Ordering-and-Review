@@ -379,7 +379,7 @@
 			var contact = form.contact.value;
 
 			var addressregex = /^[a-zA-Z0-9\s,.'-]{3,}$/;
-			var nameregex = /^[a-zA-Z]{3,10}$/;
+			var nameregex = /^[a-zA-Z\s]{3,25}$/;
 			var contactregex = /^[9][0-9]{9}$/;
 
 			if(address==""||(/^\s*$/.test(address))){
@@ -467,7 +467,7 @@
 			}
 
 			if(nameregex.test(fullname)===false){
-				document.getElementById('nameerror').innerHTML = "(Length must be between 3 to 10 alphabetic characters.)";
+				document.getElementById('nameerror').innerHTML = "(Length must be between 3 to 25 alphabetic characters.)";
 				document.getElementById('nameerror').style.display ="inline-block";
 				document.getElementById('myform').fullname.focus();
 				return false;
@@ -477,7 +477,7 @@
 			}
 
 			if(contactregex.test(contact)===false){
-				document.getElementById('contacterror').innerHTML = "(Pleade write valid contact number.)";
+				document.getElementById('contacterror').innerHTML = "(Please write valid contact number.)";
 				document.getElementById('contacterror').style.display ="inline-block";
 				document.getElementById('myform').contact.focus();
 				return false;

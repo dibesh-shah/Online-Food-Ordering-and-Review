@@ -11,6 +11,10 @@
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
 body{
 	overflow-x: hidden;
 	

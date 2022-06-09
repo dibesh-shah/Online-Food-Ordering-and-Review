@@ -15,6 +15,9 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../style.css">
     <style type="text/css">
+        html{
+            scroll-behavior: smooth;
+        }
         #error-mssg{
             width: auto;
             height: 4vh;
@@ -61,7 +64,7 @@
             <a href="searchorder.php">Search Order</a>
         </div>
         <div style="bottom: 10px;left: 14px; position: fixed; color: #B4B4B4;">
-            <h5>Copyright@2022 Food Inc.</h5>
+            <h6>Copyright@2022 Food Inc.</h6>
         </div>
         
     </div>

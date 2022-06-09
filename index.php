@@ -8,6 +8,31 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		#delivery{
+			width: 100%;
+			height: 200px;
+			background-color: red;
+		}
+
+		#delivery img{
+			z-index: 2;
+			height: 150px;
+			width: 200px;
+			vertical-align: middle;
+		}
+
+		#delivery span{
+			font-size: 19px;
+			font-weight: bold;
+			color: white;
+			margin-left: 100px;
+		}
+
+		marquee{
+			width: 80%;
+		}
+	</style>
 </head>
 <body>
 	<section class="header">
@@ -107,13 +132,18 @@
 			}
 
 			?>
-
-			
 			
 			<br>
 			<a href="menu.php"><button id="seemenu">See Menu</button><a>
 
 		</div>
+
+		<!-- <div id="delivery">
+			<marquee behaviour='slide' direction='right' scrolldelay='30' truespeed loop='1'>
+			<span>hello</span>
+			<img src="images/delivery.png">
+		</marquee>
+		</div> -->
 
 
 		

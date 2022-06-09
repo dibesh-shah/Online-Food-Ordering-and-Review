@@ -43,7 +43,7 @@
             <a href="searchorder.php">Search Order</a>
         </div>
         <div style="bottom: 10px;left: 14px; position: fixed; color: #B4B4B4;">
-            <h5>Copyright@2022 Food Inc.</h5>
+            <h6>Copyright@2022 Food Inc.</h6>
         </div>
 		
 	</div>
@@ -287,9 +287,13 @@
 						<?php
 							$q = "SELECT food, SUM(quantity) from `order` WHERE week(`order-date`)=week(CURDATE()) and status<>'cart' and status<>'cancelled' GROUP BY food ORDER BY SUM(quantity) DESC LIMIT 1";
 							$res = mysqli_query($con,$q);
-							$row = mysqli_fetch_assoc($res);
-						
-							echo"<i>This Week : ".$row['food']."</i>";
+							if(mysqli_num_rows($res)==1){
+								$row = mysqli_fetch_assoc($res);
+							
+								echo"<i>This Week : ".$row['food']."</i>";
+							}else{
+								echo"<i>This Week : No Order</i>";
+							}
 						?>
 					</span>
 					<br>
@@ -298,11 +302,15 @@
 							$sdate = date("Y-m"); 
 							$sdate = $sdate."-01";
 							$ldate = date("Y-m-t");
-							$q = "SELECT food, SUM(quantity) from `order` WHERE `order-date` BETWEEN '$sdate' and '$ldate' and status<>'cart' and status<>'cancelled' GROUP BY food ORDER BY SUM(quantity) DESC";
+							$q = "SELECT food, SUM(quantity) from `order` WHERE `order-date` BETWEEN '$sdate' and '$ldate' and status<>'cart' and status<>'cancelled' GROUP BY food ORDER BY SUM(quantity) DESC LIMIT 1";
 							$res = mysqli_query($con,$q);
-							$row = mysqli_fetch_assoc($res);
-						
-							echo"<i>This Month : ".$row['food']."</i>";
+							if(mysqli_num_rows($res)==1){
+								$row = mysqli_fetch_assoc($res);
+							
+								echo"<i>This Month : ".$row['food']."</i>";
+							}else{
+								echo"<i>This Month : No Order</i>";
+							}
 						?>
 					</span>
 				</div>
@@ -327,9 +335,13 @@
 						<?php 
 							$q = "SELECT food, COUNT(food) from review WHERE week(`date`)=week(CURDATE()) GROUP BY food ORDER BY COUNT(food) DESC LIMIT 1";
 							$res = mysqli_query($con,$q);
-							$row = mysqli_fetch_assoc($res);
-						
-							echo"<i>This Week : ".$row['food']."</i>";
+							if(mysqli_num_rows($res)==1){
+								$row = mysqli_fetch_assoc($res);
+							
+								echo"<i>This Week : ".$row['food']."</i>";
+							}else{
+								echo"<i>This Week : No Review</i>";
+							}
 						?>
 					</span>
 					<br>
@@ -338,9 +350,13 @@
 							
 							$q = "SELECT food, COUNT(food) from review WHERE month(`date`)=month(CURDATE()) GROUP BY food ORDER BY COUNT(food) DESC LIMIT 1";
 							$res = mysqli_query($con,$q);
-							$row = mysqli_fetch_assoc($res);
-						
-							echo"<i>This Month : ".$row['food']."</i>";
+							if(mysqli_num_rows($res)==1){
+								$row = mysqli_fetch_assoc($res);
+							
+								echo"<i>This Month : ".$row['food']."</i>";
+							}else{
+								echo"<i>This Month : No Review</i>";
+							}
 						?>
 					</span>
 				</div>

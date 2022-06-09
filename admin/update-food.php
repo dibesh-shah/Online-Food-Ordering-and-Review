@@ -46,7 +46,7 @@
             <a href="order-list.php">Order List</a>
         </div>
         <div style="bottom: 10px;left: 14px; position: fixed; color: #B4B4B4;">
-            <h5>Copyright@2022 Food Inc.</h5>
+            <h6>Copyright@2022 Food Inc.</h6>
         </div>
         
     </div>
