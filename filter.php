@@ -8,7 +8,7 @@ if(isset($_POST['start'],$_POST['end'],$_SESSION['email'])){
 	$end = $_POST['end'];
 	$email = $_SESSION['email'];
 
-	$q= "SELECT `order-date` ,GROUP_CONCAT( food SEPARATOR '-') as foods,GROUP_CONCAT(oid SEPARATOR '-') as oids,GROUP_CONCAT(`status` SEPARATOR '-') as status from `order` where email='$email' and status<>'cart' and `order-date` BETWEEN '$start' AND '$end' group by `order-date` order by `oid`  ";
+	$q= "SELECT `order-date` ,GROUP_CONCAT( food SEPARATOR '-') as foods,GROUP_CONCAT(oid SEPARATOR '-') as oids,GROUP_CONCAT(`status` SEPARATOR '-') as status from `order` where email='$email' and status<>'cart' and  cast(`order-date` as date) BETWEEN '$start' AND '$end' group by `order-date` order by `oid`  ";
 
 		$res = mysqli_query($con,$q);
 		if(mysqli_num_rows($res)>0){

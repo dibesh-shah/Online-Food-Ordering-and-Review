@@ -22,7 +22,6 @@
             margin:10px 30px;
             height: 80px;
             padding: 2%;
-            /*background-image: linear-gradient(to right top, #83999b, #87a1a9, #8ea7b8, #9badc5, #adb1d0);*/
             border-top: 1px solid rgba(74, 74, 74, 0.35);
             border-bottom: 1px solid rgba(74, 74, 74, 0.35);
             color: black;
@@ -94,6 +93,8 @@
             <a href="add-food.php">Add Food</a>
             <a href="manage-food.php">Manage Food</a>
             <a href="order-list.php">Order List</a>
+            <a href="searchorder.php">Search Order</a>
+            <a href="salesreport.php">Sales Report</a>
         </div>
         <div style="bottom: 10px;left: 14px; position: fixed; color: #B4B4B4;">
             <h6>Copyright@2022 Food Inc.</h6>
@@ -104,6 +105,7 @@
     <div class="restlist">
         <div class="restheader">
             <img src="../images/logo.png" height="50px" width="60px" >
+            <div class="logoutbtn"><a href="logout.php">Logout</a></div>
         </div>
         <br>
         <div class="btngroup">

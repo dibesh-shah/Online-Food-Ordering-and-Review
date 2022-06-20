@@ -44,6 +44,8 @@
             <a href="add-food.php">Add Food</a>
             <a href="manage-food.php">Manage Food</a>
             <a href="order-list.php">Order List</a>
+            <a href="searchorder.php">Search Order</a>
+            <a href="salesreport.php">Sales Report</a>
         </div>
         <div style="bottom: 10px;left: 14px; position: fixed; color: #B4B4B4;">
             <h6>Copyright@2022 Food Inc.</h6>
@@ -53,6 +55,7 @@
     <div class="restlist">
         <div class="restheader">
             <img src="../images/logo.png" height="50px" width="60px" >
+            <div class="logoutbtn"><a href="logout.php">Logout</a></div>
         </div>
         <br><br>
 

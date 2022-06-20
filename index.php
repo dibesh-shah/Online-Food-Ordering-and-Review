@@ -138,36 +138,7 @@
 
 		</div>
 
-		<!-- <div id="delivery">
-			<marquee behaviour='slide' direction='right' scrolldelay='30' truespeed loop='1'>
-			<span>hello</span>
-			<img src="images/delivery.png">
-		</marquee>
-		</div> -->
-
-
 		
-		
-	<!-- <div class="aboutus">
-		<div class="desc">
-			<img src="images/banner.jpg">
-			<br>
-			<h3>Wide variety of Foods</h3>
-			<p>We make sure you will not run out of food choices as foods list is updated regularly. And there is always something special that you may have never heard of.</p>
-		</div>
-		<div class="desc">
-			<img src="images/banner1.jpg">
-			<br>
-			<h3>Unbiased Reviews and Opinions</h3>
-			<p>The food reviews are free from Bias as they are provided by people like you. People can express the taste of foods to others in the web using the platform.</p>
-		</div>
-		<div class="desc">
-			<img src="images/banner.jpg">
-			<br>
-			<h3>Find the Perfect choice</h3>
-			<p>Based on the reviews and ratings one can find their perfect choice of foods for their hunger. Also one can help others by reviewing the foods.</p>
-		</div>
-	</div> -->
 
 
 

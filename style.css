@@ -552,7 +552,7 @@ nav img{
 	text-decoration: none;
 	display: block;
 	font-size: 15px;
-	padding: 4% 4% 4% 10%;
+	padding: 3% 3% 3% 10%;
 	margin: 5% 1%;
 	border-radius: 3px;
 }
@@ -620,6 +620,7 @@ nav img{
 	padding: 6px;
 	color: white;
 	margin-left: 15px;
+	cursor: pointer;
 
 }
 

@@ -41,6 +41,7 @@
             <a href="manage-food.php">Manage Food</a>
             <a href="order-list.php">Order List</a>
             <a href="searchorder.php">Search Order</a>
+            <a href="salesreport.php">Sales Report</a>
         </div>
         <div style="bottom: 10px;left: 14px; position: fixed; color: #B4B4B4;">
             <h6>Copyright@2022 Food Inc.</h6>
@@ -275,7 +276,7 @@
 				<h2>Most Ordered Food</h2>
 				<?php 
 					$date = date("Y"); 
-					$q = "SELECT food, SUM(quantity) from `order`  WHERE `order-date` LIKE '$date%' and status<>'cart' and status<>'cancelled' GROUP BY food ORDER BY COUNT(food) DESC LIMIT 1";
+					$q = "SELECT food, SUM(quantity) from `order`  WHERE `order-date` LIKE '$date%' and status<>'cart' and status<>'cancelled' GROUP BY food ORDER BY SUM(quantity) DESC LIMIT 1";
 					$res = mysqli_query($con,$q);
 					$row = mysqli_fetch_assoc($res);
 						
