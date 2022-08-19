@@ -42,9 +42,7 @@
 			<h5>Password</h5>
 			<input type="password" name="password" required>
 			<br><br>
-			<h5>Code</h5>
-			<input type="password" name="code" required>
-			<br><br>
+		
 			<input type="submit" name="submit" value="Sign in">
 		</form>
 	</div>
@@ -71,10 +69,8 @@ if(isset($_POST['submit']))	{
 
 	$password=md5($_POST['password']);
 
-	$code=mysqli_real_escape_string($con,$_POST['code']);
 
-
-		$q="SELECT firstname,email ,password FROM `userinfo` WHERE firstname='$code' AND email='$email' AND password='$password'";
+		$q="SELECT firstname,email ,password FROM `userinfo` WHERE email='$email' AND password='$password'";
 
 		$res=mysqli_query($con,$q);
 

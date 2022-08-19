@@ -471,6 +471,7 @@
 						success: function (data) {
 							$("#popup").hide();
 							$(".fitlerrecord").show();
+							$(".ordergroup").hide();
 		        			$('.fitlerrecord').html(data);
 
 		    			},

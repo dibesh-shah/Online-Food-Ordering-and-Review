@@ -28,7 +28,7 @@ if(isset($_POST['start'],$_POST['end'],$_SESSION['email'])){
 					<label>Order Status : <span class='status current'>".$val."</span></label>
 					";
 
-				$extf = explode('-', $row['foods']);
+				$extf = explode('-', $row['foods']); 
 				
 				echo"<div class='orderitems'>";
 				for ($i=0; $i <count($extf) ; $i++) { 
