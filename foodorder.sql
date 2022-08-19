@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2022 at 04:04 PM
+-- Generation Time: Aug 19, 2022 at 06:44 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -180,7 +180,18 @@ INSERT INTO `order` (`oid`, `food`, `price`, `quantity`, `total`, `instruction`,
 (68, 'Aloo Sadheko', 140, 4, 560, '', '2022-05-15 09:23:26am', 'Delivered', 'jkdfhdk', 'khfdhdfkj', 'jhfdkh-->khdkfhk', 'hello@gmail.com'),
 (70, 'Aloo Tikki Burger', 200, 3, 600, '', '2022-05-15 10:42:14am', 'Delivered', 'jfglkjlk', 'kjlfjk', 'jdjslkjl-->kdjflj', 'hello@gmail.com'),
 (71, 'Cauliflower Wings', 200, 3, 600, '', '2022-05-15  4:00PM - 4:30PM', 'Delivered', 'kfjkdl', 'dfjkldjflk', 'dkfkjl-->jdjfldk', 'hello@gmail.com'),
-(72, 'Chicken Biryani', 300, 2, 600, '', '2022-05-17  3:30PM - 4:00PM', 'Delivered', 'lkdsj', '9845658456', 'jdfjglkgj-->jkljklfjldjl-', 'hello@gmail.com');
+(72, 'Chicken Biryani', 300, 2, 600, '', '2022-05-17  3:30PM - 4:00PM', 'Delivered', 'lkdsj', '9845658456', 'jdfjglkgj-->jkljklfjldjl-', 'hello@gmail.com'),
+(73, 'Aloo Tikki Burger', 200, 3, 600, '', '2022-05-24  2:30PM - 3:00PM', 'ordered', 'bimal', '9812121212', 'bimal-->bimal', 'hello@gmail.com'),
+(75, 'Aloo Sadheko', 140, 2, 280, 'noice bimal ji', '2022-05-24  2:30PM - 3:00PM', 'ordered', 'bimal', '9812121212', 'bimal-->bimal', 'hello@gmail.com'),
+(76, 'Aloo Sadheko', 140, 5, 700, '', '2022-05-24  3:30PM - 4:00PM', 'Cancelled', 'bimal', '9845454545', 'bimal-->bimal', 'hello@gmail.com'),
+(77, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com'),
+(78, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com'),
+(79, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com'),
+(80, 'Chicken Chowmein', 180, 5, 900, 'please add extra soy sauce', '', 'cart', '', '', '', 'hello@gmail.com'),
+(81, 'Chicken Fried Rice', 240, 2, 480, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com'),
+(83, 'Egg Tikka Masala', 300, 1, 300, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com'),
+(84, 'Cauliflower Wings', 200, 2, 400, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com'),
+(85, 'BBQ Chicken Pizza', 330, 5, 1650, '', '2022-08-19 10:05:39am', 'Delivered', 'khfjkdhkdjfh', '9898989898', 'khdkfhjf-->kdhfkjdhf', 'john@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -263,7 +274,19 @@ INSERT INTO `review` (`rid`, `userid`, `food`, `review`, `date`) VALUES
 (61, 1, 'Chicken Biryani ', 'i\'m done with this food.,', '2022-05-17'),
 (62, 1, 'Chicken Biryani ', 'is', '2022-05-17'),
 (63, 1, 'Chicken Biryani ', ':this is best@&', '2022-05-17'),
-(64, 1, 'Chicken Biryani ', '\'\'\'\'\'\'', '2022-05-17');
+(64, 1, 'Chicken Biryani ', '\'\'\'\'\'\'', '2022-05-17'),
+(65, 1, 'Aloo Sadheko ', 'olallalalallala', '2022-05-24'),
+(66, 1, 'Aloo Sadheko ', 'it has unique taste , i like it', '2022-05-26'),
+(67, 1, 'Aloo Sadheko ', 'delicious ', '2022-05-26'),
+(68, 1, 'Aloo Sadheko ', 'nicely seasoned with tangy taste..', '2022-05-26'),
+(69, 1, 'Aloo Sadheko ', 'taste good ..', '2022-06-07'),
+(70, 2, 'Aloo Sadheko ', 'taste gooooood', '2022-08-19'),
+(71, 2, 'BBQ Chicken Pizza ', 'perfectly seasoned and loved the taste......', '2022-08-19'),
+(72, 2, 'Cauliflower Wings ', 'perfectly seasoned and loved the taste......', '2022-08-19'),
+(73, 2, 'Cauliflower Wings ', 'perfectly seasoned and loved the taste......', '2022-08-19'),
+(74, 2, 'Cauliflower Wings ', 'very flavorful', '2022-08-19'),
+(75, 2, 'Chicken Biryani ', 'best i have ever eaten', '2022-08-19'),
+(76, 2, 'Egg Tikka Masala ', 'amazed by the thing that you get pretty large quantity', '2022-08-19');
 
 -- --------------------------------------------------------
 
@@ -286,7 +309,7 @@ CREATE TABLE `userinfo` (
 
 INSERT INTO `userinfo` (`uid`, `firstname`, `lastname`, `email`, `contact`, `password`) VALUES
 (1, 'helloo', 'hello', 'hello@gmail.com', '9894564545', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
-(2, 'john', 'wick', 'john@gmail.com', '4566565655', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
+(2, 'john', 'wickk', 'john@gmail.com', '4566565655', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
 (3, '1z-2x-3c', '', 'admin@gmail.com', '', '21232f297a57a5a743894a0e4a801fc3'),
 (4, 'abcdefghijk', 'jlfglkj', 'jkfjgjfl', 'klfgkjfglj', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
 (5, 'aaaa', 'aaaa', 'a@aa.co', '3212321232', 'c190b5acc42be61f1b1377427a146c14576cb31d'),
@@ -334,25 +357,25 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `cid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `fid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `fid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `userinfo`
