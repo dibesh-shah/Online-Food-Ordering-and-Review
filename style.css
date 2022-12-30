@@ -966,6 +966,7 @@ td{
 	background: transparent;
 	border: none;
 	cursor: pointer;
+	vertical-align: middle; 
 
 }
 
@@ -998,7 +999,7 @@ td{
 #close{
 	float: right;
 	background: transparent;
-	font-size: 16px;
+	font-size: 20px;
 	color: red;
 	width: 25px;
 	cursor: pointer;

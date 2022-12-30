@@ -357,7 +357,7 @@
 				$email = $_SESSION['email'];
 				$todaydate =  date("Y-m-d");
 
-				$q= "SELECT `order-date` ,GROUP_CONCAT( food SEPARATOR '-') as foods,GROUP_CONCAT(oid SEPARATOR '-') as oids,GROUP_CONCAT(`status` SEPARATOR '-') as status from `order` where email='$email' and status<>'cart' and `order-date` NOT LIKE '$todaydate%:__:%' and `order-date` NOT LIKE '$todaydate%:%-%:%' group by `order-date` order by `oid` desc LIMIT 3 ";
+				$q= "SELECT `order-date` ,GROUP_CONCAT( food SEPARATOR '-') as foods,GROUP_CONCAT(oid SEPARATOR '-') as oids,GROUP_CONCAT(`status` SEPARATOR '-') as status from `order` where email='$email' and status<>'cart' and `order-date` NOT LIKE '$todaydate%:__:%' and `order-date` NOT LIKE '$todaydate%:%-%:%'  group by `order-date` order by `oid` desc LIMIT 3 ";
 
 				$res = mysqli_query($con,$q);
 

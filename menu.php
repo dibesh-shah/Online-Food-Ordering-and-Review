@@ -16,7 +16,7 @@
 <body>
 	<div class="addcart" id="addcart">
 		<div class="addcartitem" id="addcartitem">
-			<button id="close" >X</button>
+			<button id="close" >x</button>
 			<p class="cart_title">  </p>
 			<br>
 			<p class="cart_price" style="font-size: 25px;opacity: 0.8;"></p>

@@ -111,6 +111,7 @@
                     <th >NAME</th>
                     <th >ADDRESS</th>
                     <th >CONTACT</th>
+                    <th >PAYMENT</th>
                     <th >ACTION</th>
                 </tr>
 
@@ -138,6 +139,7 @@
                             $name = $row['c-name'];
                             $address = $row['c-address'];
                             $contact = $row['c-contact'];
+                            $payment = $row['payment'];
                             $sn++;
                             ?>
 
@@ -162,6 +164,7 @@
                                 <td><?php echo $name; ?></td>
                                 <td><?php echo $address; ?></td>
                                 <td><?php echo $contact; ?></td>
+                                <td><?php echo $payment; ?></td>
                                 <td>
                                     <button class="b1">OnDelivery</button>
                                     <button class ="b2">Delivered</button>

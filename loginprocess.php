@@ -9,7 +9,7 @@ if(isset($_POST['email'],$_POST['password'])){
 	$password=sha1($_POST['password']);
 
 
-		$q="SELECT uid,firstname, lastname, email ,password FROM `userinfo` WHERE email='$email' AND password='$password'";
+		$q="SELECT uid,firstname, lastname, email ,password,contact FROM `userinfo` WHERE email='$email' AND password='$password'";
 
 		$res=mysqli_query($con,$q);
 
@@ -24,6 +24,8 @@ if(isset($_POST['email'],$_POST['password'])){
 				$_SESSION['username']=$row['firstname']." ".$row['lastname'];
 
 				$_SESSION['userid'] = $row['uid'];
+				
+				$_SESSION['contact'] = $row['contact'];
 
 				if(isset($_SESSION['url'])){
 

@@ -238,7 +238,12 @@
 			<br>
 			<div style="height: auto;border: 1px solid rgba(74, 74, 74, 0.2);padding-bottom: 10px;">
 				<p >PAYMENT OPTION</p>
-				<label><input type="radio" name="" checked=""  style="width: 5%;vertical-align: middle;">Cash On Delivery</label>
+				<label><input type="radio" name="paychoice" value="cod" checked="" id="cod" style="width: 5%;vertical-align: middle;">Cash On Delivery</label>
+				<br><br>
+				<label>
+					<input type="radio" name="paychoice" value="esewa" id="esewa" style="width: 5%;vertical-align: middle;">
+					<img src="images/esewa.png" height="20px"  style="vertical-align: middle;object-fit: contain;object-position: center;">
+				</label>
 				
 			</div>
 			<br>
@@ -246,14 +251,15 @@
 			<div style="height: auto;border: 1px solid rgba(74, 74, 74, 0.2);padding-bottom: 10px;">
 				<p>INFO</p>
 				<span>FULLNAME *<span class="er" id="nameerror"></span></span>
-				<input type="text" name="fullname" >
+				<input type="text" name="fullname" id="fullnam" readonly="readonly" value="<?php echo $_SESSION['username']; ?>">
 				<br><br>
 				<span>CONTACT NO. *<span class="er" id="contacterror"></span></span>
-				<input type="text" name="contact" >
+				<input type="text" name="contact" id="contac" readonly="readonly" value="<?php echo $_SESSION['contact']; ?>" >
 				
 			</div>
 
 			<input type="hidden" name="oids" value="<?php echo $ext ?>">
+			<input type="hidden" name="total" value="<?php echo substr($total, 3);?>">
 			<button id="continue" type="submit" name="continue" style="background-color: blue;float: right;">Continue</button>
 			
 
@@ -493,6 +499,18 @@
 <script type="text/javascript">
 	document.getElementById("goback").addEventListener("click", function(){
 		window.location="cart.php";
+	});
+
+	document.getElementById("cod").addEventListener("click", function(){
+		document.getElementById("fullnam").value = '<?php echo $_SESSION['username']; ?>';
+		document.getElementById("contac").value = '<?php echo $_SESSION['contact']; ?>';
+		document.getElementById("fullnam").readOnly = true;
+		document.getElementById("contac").readOnly = true;
+	});
+
+	document.getElementById("esewa").addEventListener("click", function(){
+		document.getElementById("fullnam").readOnly = false;
+		document.getElementById("contac").readOnly = false;
 	});
 
 </script>
