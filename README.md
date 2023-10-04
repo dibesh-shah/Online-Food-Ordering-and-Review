@@ -20,11 +20,23 @@
 ## Images
 
 Here are some images related to the **Online Food Ordering and Review** project:
+
+- **Homepage**: 
 ![Admin Dashboard](/images/s1.png)
+
+- **Menu**: 
 ![Admin Dashboard](/images/s2.png)
+
+- **Cart**: 
 ![Admin Dashboard](/images/s3.png)
+
+- **Checkout**: 
 ![Admin Dashboard](/images/s4.png)
+
+- **Admin Dashboard**: 
 ![Admin Dashboard](/images/s5.png)
+
+- **Manage Food**: 
 ![Admin Dashboard](/images/s6.png)
 
 
