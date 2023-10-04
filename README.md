@@ -20,10 +20,12 @@
 ## Images
 
 Here are some images related to the **Online Food Ordering and Review** project:
+![Admin Dashboard](/images/s1.png)
+![Admin Dashboard](/images/s2.png)
+![Admin Dashboard](/images/s3.png)
+![Admin Dashboard](/images/s4.png)
+![Admin Dashboard](/images/s5.png)
+![Admin Dashboard](/images/s6.png)
 
-- `dashboard.png`: Screenshot of the admin dashboard.
-- `menu_management.png`: Screenshot of the menu management interface.
-- `order_tracking.png`: Screenshot of the user order tracking feature.
-- `restaurant_review.png`: Screenshot of the restaurant review section.
 
-Feel free to customize this template with additional information and details specific to your project. You can include installation instructions, usage guidelines, licensing information, and more to make your project's README comprehensive and informative.
+
