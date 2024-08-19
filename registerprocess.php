@@ -32,7 +32,7 @@
 		$result=mysqli_query($con,$query);
 
 		if(!$result){
-			die("cannot insert data");
+			// die("cannot insert data");
 			die(mysqli_error($con));
 		}
 		else{

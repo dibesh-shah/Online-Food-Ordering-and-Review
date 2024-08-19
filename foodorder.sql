@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2022 at 06:44 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Aug 19, 2024 at 03:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `category` (
   `image_name` varchar(255) NOT NULL,
   `featured` varchar(10) NOT NULL,
   `active` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
@@ -66,7 +66,7 @@ CREATE TABLE `food` (
   `category_id` int(10) NOT NULL,
   `featured` varchar(10) NOT NULL,
   `active` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `food`
@@ -126,72 +126,120 @@ CREATE TABLE `order` (
   `c-name` varchar(100) NOT NULL,
   `c-contact` varchar(20) NOT NULL,
   `c-address` varchar(150) NOT NULL,
-  `email` varchar(120) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `email` varchar(120) NOT NULL,
+  `payment` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`oid`, `food`, `price`, `quantity`, `total`, `instruction`, `order-date`, `status`, `c-name`, `c-contact`, `c-address`, `email`) VALUES
-(4, 'pizza', 10, 1, 10, 'extra toppings withcheese', '2022-04-16 09:28:30pm	', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com'),
-(5, 'samosa', 120, 1, 120, 'red chutney', '0000-00-00 00:00:00', 'Delivered', '', '', '', 'john@gmail.com'),
-(7, 'samosa', 120, 1, 120, 'add green chutne a little more.', '2022-04-16  1:00PM - 1:30PM', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com'),
-(12, 'samosa', 120, 1, 120, 'noice noice noice\n', '2022-04-16  1:00PM - 1:30PM', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com'),
-(13, 'samosa', 120, 1, 120, 'bbbb', '2022-04-16  1:00PM - 1:30PM', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com'),
-(14, 'pizza', 10, 1, 10, '', '2022-04-16 09:02:13pm', 'Delivered', 'ram ', '65145464', 'jamal -->near ghantaghar', 'hello@gmail.com'),
-(15, 'samosa', 120, 3, 360, '', '2022-04-16 09:02:13pm', 'Cancelled', 'ram ', '65145464', 'jamal -->near ghantaghar', 'hello@gmail.com'),
-(16, 'samosa', 120, 2, 240, '', '2022-04-16 09:02:13pm', 'Cancelled', 'ram ', '65145464', 'jamal -->near ghantaghar', 'hello@gmail.com'),
-(17, 'samosa', 120, 5, 600, '', '2022-04-16 09:28:30pm', 'Cancelled', 'ghjgjg', 'jggjgh', 'jfldjasf-->jsfljdsfljfl', 'hello@gmail.com'),
-(19, 'samosa', 120, 5, 600, '', '2022-04-18 12:32:07pm', 'Delivered', 'jkjfgjklfjsd', 'jdlfjlgjfldsjgk', 'kdlhfdh-->ljfjlfkjsdf', 'hello@gmail.com'),
-(20, 'samosa', 120, 5, 600, '', '2022-04-22 08:41:16pm', 'On Delivery', 'hdkfhk', 'jkhdkhfhds', 'jdfljdl-->jdsflj', 'hello@gmail.com'),
-(22, 'Egg Chowmein', 160, 1, 160, '', '2022-04-24 11:14:49am', 'Cancelled', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com'),
-(23, 'Peanut Sadheko', 160, 1, 160, 'do it now', '2022-04-24 11:14:49am', 'Delivered', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com'),
-(24, 'Fish Burger', 250, 4, 1000, '', '2022-04-24 11:14:49am', 'ordered', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com'),
-(25, 'Chicken Wings', 300, 1, 300, '', '2022-04-24 11:14:49am', 'ordered', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com'),
-(27, 'Jhol Momo', 150, 4, 600, '', '2022-04-26 01:08:35pm', 'Delivered', 'fsndgnsdfgl', 'djjdflgjlkfj', 'gkljkjj-->dfhjdfhgkjh', 'hello@gmail.com'),
-(28, 'Chicken Biryani', 300, 2, 600, '', '2022-04-30 10:49:11am', 'Delivered', 'hgkhkhg', 'fhdkhfdhfd', 'kdhkhk-->hdfkhk', 'john@gmail.com'),
-(29, 'Aloo Sadheko', 140, 4, 560, '', '2022-04-30 10:57:48am', 'Delivered', 'kfjgljl', 'dfhkjdhfkhkd', 'hshadfkjdhas-->hsdfhkahk', 'john@gmail.com'),
-(30, 'Aloo Sadheko', 140, 5, 700, '', '2022-04-30 10:59:29am', 'Delivered', 'dhjhfkjdh', 'dfhkjdhfk', 'hdhskdhsj-->dsfhkjdhf', 'hello@gmail.com'),
-(31, 'Fried Chicken Momo', 180, 2, 360, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com'),
-(32, 'Aloo Tikki Burger', 200, 2, 400, 'hi hello', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com'),
-(33, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com'),
-(34, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com'),
-(35, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com'),
-(36, 'Butter Chicken', 350, 1, 350, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com'),
-(37, 'Aloo Sadheko', 140, 4, 560, '', '2022-05-01  4:30PM - 5:00PM', 'ordered', 'hdsfhhdkj', 'shhdkfhkhd', 'dkfhkdjh-->hdfkdkh', 'hello@gmail.com'),
-(38, 'Fish Burger', 250, 3, 750, '', '2022-05-09 10:51:10am', 'ordered', 'jfjklgjlkjl', 'lfjjflgjlkf', 'jorrutoi-->hgfhghjk', 'hello@gmail.com'),
-(39, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-09 10:55:29am', 'ordered', 'hgkfhgkh', 'hkhfkhkdf', 'dhkdhfkj-->kdhfhkhfkj', 'hello@gmail.com'),
-(40, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-09 10:55:29am', 'ordered', 'hgkfhgkh', 'hkhfkhkdf', 'dhkdhfkj-->kdhfhkhfkj', 'hello@gmail.com'),
-(41, 'Butter Chicken', 350, 1, 350, '', '2022-05-09 10:55:29am', 'ordered', 'hgkfhgkh', 'hkhfkhkdf', 'dhkdhfkj-->kdhfhkhfkj', 'hello@gmail.com'),
-(42, 'BBQ Chicken Pizza', 330, 2, 660, '', '2022-05-09  5:00PM - 5:30PM', 'On Delivery', 'khfkdh', 'jdkfhdkfhkj', 'jhfkdjdhkfhk-->kjdhfkhdfh', 'hello@gmail.com'),
-(43, 'Egg Chowmein', 160, 2, 320, '', '2022-05-09  1:00PM - 1:30PM', 'Delivered', 'kdfhkhjhk', 'jkfdkhkfjhdk', 'jdjgfhj-->hgdfgjfgh', 'hello@gmail.com'),
-(44, 'Egg Fried Rice', 200, 2, 400, '', '2022-05-09  1:00PM - 1:30PM', 'ordered', 'kdfhkhjhk', 'jkfdkhkfjhdk', 'jdjgfhj-->hgdfgjfgh', 'hello@gmail.com'),
-(45, 'Veg Biryani', 250, 2, 500, '', '2022-05-11 07:55:01pm', 'ordered', 'hdfkjhk', 'jhdhkjdhfj', 'ksdfkjdshfk-->dhskfkhkj', 'hello@gmail.com'),
-(46, 'Aloo Tikki Burger', 200, 2, 400, '', '2022-05-11 07:55:01pm', 'ordered', 'hdfkjhk', 'jhdhkjdhfj', 'ksdfkjdshfk-->dhskfkhkj', 'hello@gmail.com'),
-(58, 'Steamed Chicken Momo', 160, 1, 160, '', '2022-05-11 07:55:01pm', 'ordered', 'hdfkjhk', 'jhdhkjdhfj', 'ksdfkjdshfk-->dhskfkhkj', 'hello@gmail.com'),
-(61, 'Aloo Sadheko', 140, 1, 140, '', '2022-05-12 12:52:08pm', 'Cancelled', 'fjhdfkh', 'jhdhhfkdhkfj', 'hdfkjhh-->hdfdhkfhk', 'hello@gmail.com'),
-(62, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-12 12:52:08pm', 'ordered', 'fjhdfkh', 'jhdhhfkdhkfj', 'hdfkjhh-->hdfdhkfhk', 'hello@gmail.com'),
-(63, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-12 12:52:08pm', 'ordered', 'fjhdfkh', 'jhdhhfkdhkfj', 'hdfkjhh-->hdfdhkfhk', 'hello@gmail.com'),
-(64, 'Egg Chowmein', 160, 4, 640, '', '2022-05-12 01:07:44pm', 'On Delivery', 'jhgjhgjg', 'hfhfgfhf', 'hdfdkfj-->hkdhkhkf', 'hello@gmail.com'),
-(65, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-12  4:00PM - 4:30PM', 'On Delivery', 'dhhfk', 'hkdhkdfh', 'khdkhfk-->khdfhkdjh', 'hello@gmail.com'),
-(66, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-12  4:00PM - 4:30PM', 'On Delivery', 'dhhfk', 'hkdhkdfh', 'khdkhfk-->khdfhkdjh', 'hello@gmail.com'),
-(67, 'Cauliflower Wings', 200, 1, 200, '', '2022-05-12  4:00PM - 4:30PM', 'ordered', 'dhhfk', 'hkdhkdfh', 'khdkhfk-->khdfhkdjh', 'hello@gmail.com'),
-(68, 'Aloo Sadheko', 140, 4, 560, '', '2022-05-15 09:23:26am', 'Delivered', 'jkdfhdk', 'khfdhdfkj', 'jhfdkh-->khdkfhk', 'hello@gmail.com'),
-(70, 'Aloo Tikki Burger', 200, 3, 600, '', '2022-05-15 10:42:14am', 'Delivered', 'jfglkjlk', 'kjlfjk', 'jdjslkjl-->kdjflj', 'hello@gmail.com'),
-(71, 'Cauliflower Wings', 200, 3, 600, '', '2022-05-15  4:00PM - 4:30PM', 'Delivered', 'kfjkdl', 'dfjkldjflk', 'dkfkjl-->jdjfldk', 'hello@gmail.com'),
-(72, 'Chicken Biryani', 300, 2, 600, '', '2022-05-17  3:30PM - 4:00PM', 'Delivered', 'lkdsj', '9845658456', 'jdfjglkgj-->jkljklfjldjl-', 'hello@gmail.com'),
-(73, 'Aloo Tikki Burger', 200, 3, 600, '', '2022-05-24  2:30PM - 3:00PM', 'ordered', 'bimal', '9812121212', 'bimal-->bimal', 'hello@gmail.com'),
-(75, 'Aloo Sadheko', 140, 2, 280, 'noice bimal ji', '2022-05-24  2:30PM - 3:00PM', 'ordered', 'bimal', '9812121212', 'bimal-->bimal', 'hello@gmail.com'),
-(76, 'Aloo Sadheko', 140, 5, 700, '', '2022-05-24  3:30PM - 4:00PM', 'Cancelled', 'bimal', '9845454545', 'bimal-->bimal', 'hello@gmail.com'),
-(77, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com'),
-(78, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com'),
-(79, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com'),
-(80, 'Chicken Chowmein', 180, 5, 900, 'please add extra soy sauce', '', 'cart', '', '', '', 'hello@gmail.com'),
-(81, 'Chicken Fried Rice', 240, 2, 480, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com'),
-(83, 'Egg Tikka Masala', 300, 1, 300, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com'),
-(84, 'Cauliflower Wings', 200, 2, 400, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com'),
-(85, 'BBQ Chicken Pizza', 330, 5, 1650, '', '2022-08-19 10:05:39am', 'Delivered', 'khfjkdhkdjfh', '9898989898', 'khdkfhjf-->kdhfkjdhf', 'john@gmail.com');
+INSERT INTO `order` (`oid`, `food`, `price`, `quantity`, `total`, `instruction`, `order-date`, `status`, `c-name`, `c-contact`, `c-address`, `email`, `payment`) VALUES
+(4, 'pizza', 10, 1, 10, 'extra toppings withcheese', '2022-04-16 09:28:30pm	', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com', NULL),
+(5, 'samosa', 120, 1, 120, 'red chutney', '0000-00-00 00:00:00', 'Delivered', '', '', '', 'john@gmail.com', NULL),
+(7, 'samosa', 120, 1, 120, 'add green chutne a little more.', '2022-04-16  1:00PM - 1:30PM', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com', NULL),
+(12, 'samosa', 120, 1, 120, 'noice noice noice\n', '2022-04-16  1:00PM - 1:30PM', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com', NULL),
+(13, 'samosa', 120, 1, 120, 'bbbb', '2022-04-16  1:00PM - 1:30PM', 'Delivered', 'kjkjkh', 'kjhkh', 'jgh-->jhkh', 'hello@gmail.com', NULL),
+(14, 'pizza', 10, 1, 10, '', '2022-04-16 09:02:13pm', 'Delivered', 'ram ', '65145464', 'jamal -->near ghantaghar', 'hello@gmail.com', NULL),
+(15, 'samosa', 120, 3, 360, '', '2022-04-16 09:02:13pm', 'Cancelled', 'ram ', '65145464', 'jamal -->near ghantaghar', 'hello@gmail.com', NULL),
+(16, 'samosa', 120, 2, 240, '', '2022-04-16 09:02:13pm', 'Cancelled', 'ram ', '65145464', 'jamal -->near ghantaghar', 'hello@gmail.com', NULL),
+(17, 'samosa', 120, 5, 600, '', '2022-04-16 09:28:30pm', 'Cancelled', 'ghjgjg', 'jggjgh', 'jfldjasf-->jsfljdsfljfl', 'hello@gmail.com', NULL),
+(19, 'samosa', 120, 5, 600, '', '2022-04-18 12:32:07pm', 'Delivered', 'jkjfgjklfjsd', 'jdlfjlgjfldsjgk', 'kdlhfdh-->ljfjlfkjsdf', 'hello@gmail.com', NULL),
+(20, 'samosa', 120, 5, 600, '', '2022-04-22 08:41:16pm', 'On Delivery', 'hdkfhk', 'jkhdkhfhds', 'jdfljdl-->jdsflj', 'hello@gmail.com', NULL),
+(22, 'Egg Chowmein', 160, 1, 160, '', '2022-04-24 11:14:49am', 'Cancelled', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com', NULL),
+(23, 'Peanut Sadheko', 160, 1, 160, 'do it now', '2022-04-24 11:14:49am', 'Delivered', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com', NULL),
+(24, 'Fish Burger', 250, 4, 1000, '', '2022-04-24 11:14:49am', 'ordered', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com', NULL),
+(25, 'Chicken Wings', 300, 1, 300, '', '2022-04-24 11:14:49am', 'ordered', 'ghjgjhgjg', 'hjkkghkgjh', 'iaisdfoij-->fjddhflhk', 'hello@gmail.com', NULL),
+(27, 'Jhol Momo', 150, 4, 600, '', '2022-04-26 01:08:35pm', 'Delivered', 'fsndgnsdfgl', 'djjdflgjlkfj', 'gkljkjj-->dfhjdfhgkjh', 'hello@gmail.com', NULL),
+(28, 'Chicken Biryani', 300, 2, 600, '', '2022-04-30 10:49:11am', 'Delivered', 'hgkhkhg', 'fhdkhfdhfd', 'kdhkhk-->hdfkhk', 'john@gmail.com', NULL),
+(29, 'Aloo Sadheko', 140, 4, 560, '', '2022-04-30 10:57:48am', 'Delivered', 'kfjgljl', 'dfhkjdhfkhkd', 'hshadfkjdhas-->hsdfhkahk', 'john@gmail.com', NULL),
+(30, 'Aloo Sadheko', 140, 5, 700, '', '2022-04-30 10:59:29am', 'Delivered', 'dhjhfkjdh', 'dfhkjdhfk', 'hdhskdhsj-->dsfhkjdhf', 'hello@gmail.com', NULL),
+(31, 'Fried Chicken Momo', 180, 2, 360, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com', NULL),
+(32, 'Aloo Tikki Burger', 200, 2, 400, 'hi hello', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com', NULL),
+(33, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com', NULL),
+(34, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com', NULL),
+(35, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com', NULL),
+(36, 'Butter Chicken', 350, 1, 350, '', '2022-05-01 10:56:07am', 'ordered', 'hghjggjhhgg', 'hgjgjgjg', 'hgjhgjgjh-->hjgjgjhg', 'hello@gmail.com', NULL),
+(37, 'Aloo Sadheko', 140, 4, 560, '', '2022-05-01  4:30PM - 5:00PM', 'ordered', 'hdsfhhdkj', 'shhdkfhkhd', 'dkfhkdjh-->hdfkdkh', 'hello@gmail.com', NULL),
+(38, 'Fish Burger', 250, 3, 750, '', '2022-05-09 10:51:10am', 'ordered', 'jfjklgjlkjl', 'lfjjflgjlkf', 'jorrutoi-->hgfhghjk', 'hello@gmail.com', NULL),
+(39, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-09 10:55:29am', 'ordered', 'hgkfhgkh', 'hkhfkhkdf', 'dhkdhfkj-->kdhfhkhfkj', 'hello@gmail.com', NULL),
+(40, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-09 10:55:29am', 'ordered', 'hgkfhgkh', 'hkhfkhkdf', 'dhkdhfkj-->kdhfhkhfkj', 'hello@gmail.com', NULL),
+(41, 'Butter Chicken', 350, 1, 350, '', '2022-05-09 10:55:29am', 'ordered', 'hgkfhgkh', 'hkhfkhkdf', 'dhkdhfkj-->kdhfhkhfkj', 'hello@gmail.com', NULL),
+(42, 'BBQ Chicken Pizza', 330, 2, 660, '', '2022-05-09  5:00PM - 5:30PM', 'On Delivery', 'khfkdh', 'jdkfhdkfhkj', 'jhfkdjdhkfhk-->kjdhfkhdfh', 'hello@gmail.com', NULL),
+(43, 'Egg Chowmein', 160, 2, 320, '', '2022-05-09  1:00PM - 1:30PM', 'Delivered', 'kdfhkhjhk', 'jkfdkhkfjhdk', 'jdjgfhj-->hgdfgjfgh', 'hello@gmail.com', NULL),
+(44, 'Egg Fried Rice', 200, 2, 400, '', '2022-05-09  1:00PM - 1:30PM', 'ordered', 'kdfhkhjhk', 'jkfdkhkfjhdk', 'jdjgfhj-->hgdfgjfgh', 'hello@gmail.com', NULL),
+(45, 'Veg Biryani', 250, 2, 500, '', '2022-05-11 07:55:01pm', 'ordered', 'hdfkjhk', 'jhdhkjdhfj', 'ksdfkjdshfk-->dhskfkhkj', 'hello@gmail.com', NULL),
+(46, 'Aloo Tikki Burger', 200, 2, 400, '', '2022-05-11 07:55:01pm', 'ordered', 'hdfkjhk', 'jhdhkjdhfj', 'ksdfkjdshfk-->dhskfkhkj', 'hello@gmail.com', NULL),
+(58, 'Steamed Chicken Momo', 160, 1, 160, '', '2022-05-11 07:55:01pm', 'ordered', 'hdfkjhk', 'jhdhkjdhfj', 'ksdfkjdshfk-->dhskfkhkj', 'hello@gmail.com', NULL),
+(61, 'Aloo Sadheko', 140, 1, 140, '', '2022-05-12 12:52:08pm', 'Cancelled', 'fjhdfkh', 'jhdhhfkdhkfj', 'hdfkjhh-->hdfdhkfhk', 'hello@gmail.com', NULL),
+(62, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-12 12:52:08pm', 'ordered', 'fjhdfkh', 'jhdhhfkdhkfj', 'hdfkjhh-->hdfdhkfhk', 'hello@gmail.com', NULL),
+(63, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-12 12:52:08pm', 'ordered', 'fjhdfkh', 'jhdhhfkdhkfj', 'hdfkjhh-->hdfdhkfhk', 'hello@gmail.com', NULL),
+(64, 'Egg Chowmein', 160, 4, 640, '', '2022-05-12 01:07:44pm', 'On Delivery', 'jhgjhgjg', 'hfhfgfhf', 'hdfdkfj-->hkdhkhkf', 'hello@gmail.com', NULL),
+(65, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-12  4:00PM - 4:30PM', 'On Delivery', 'dhhfk', 'hkdhkdfh', 'khdkhfk-->khdfhkdjh', 'hello@gmail.com', NULL),
+(66, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-12  4:00PM - 4:30PM', 'On Delivery', 'dhhfk', 'hkdhkdfh', 'khdkhfk-->khdfhkdjh', 'hello@gmail.com', NULL),
+(67, 'Cauliflower Wings', 200, 1, 200, '', '2022-05-12  4:00PM - 4:30PM', 'ordered', 'dhhfk', 'hkdhkdfh', 'khdkhfk-->khdfhkdjh', 'hello@gmail.com', NULL),
+(68, 'Aloo Sadheko', 140, 4, 560, '', '2022-05-15 09:23:26am', 'Delivered', 'jkdfhdk', 'khfdhdfkj', 'jhfdkh-->khdkfhk', 'hello@gmail.com', NULL),
+(70, 'Aloo Tikki Burger', 200, 3, 600, '', '2022-05-15 10:42:14am', 'Delivered', 'jfglkjlk', 'kjlfjk', 'jdjslkjl-->kdjflj', 'hello@gmail.com', NULL),
+(71, 'Cauliflower Wings', 200, 3, 600, '', '2022-05-15  4:00PM - 4:30PM', 'Delivered', 'kfjkdl', 'dfjkldjflk', 'dkfkjl-->jdjfldk', 'hello@gmail.com', NULL),
+(72, 'Chicken Biryani', 300, 2, 600, '', '2022-05-17  3:30PM - 4:00PM', 'Delivered', 'lkdsj', '9845658456', 'jdfjglkgj-->jkljklfjldjl-', 'hello@gmail.com', NULL),
+(73, 'Aloo Tikki Burger', 200, 3, 600, '', '2022-05-24  2:30PM - 3:00PM', 'ordered', 'bimal', '9812121212', 'bimal-->bimal', 'hello@gmail.com', NULL),
+(75, 'Aloo Sadheko', 140, 2, 280, 'noice bimal ji', '2022-05-24  2:30PM - 3:00PM', 'ordered', 'bimal', '9812121212', 'bimal-->bimal', 'hello@gmail.com', NULL),
+(76, 'Aloo Sadheko', 140, 5, 700, '', '2022-05-24  3:30PM - 4:00PM', 'Cancelled', 'bimal', '9845454545', 'bimal-->bimal', 'hello@gmail.com', NULL),
+(77, 'Aloo Tikki Burger', 200, 1, 200, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com', NULL),
+(78, 'BBQ Chicken Pizza', 330, 1, 330, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com', NULL),
+(79, 'BBQ Sausage Chilli', 330, 1, 330, '', '2022-05-26 01:28:28pm', 'ordered', 'Ramesh', '9814512451', 'samkhusi-->200m north to the samakhusi petrol pump near horizon cafe', 'hello@gmail.com', NULL),
+(80, 'Chicken Chowmein', 180, 5, 900, 'please add extra soy sauce', '2024-07-22 03:33:54pm', 'ordered', 'helloo hello', '9894564545', 'sdfd-sdfsd', 'hello@gmail.com', 'cod'),
+(81, 'Chicken Fried Rice', 240, 2, 480, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com', NULL),
+(83, 'Egg Tikka Masala', 300, 1, 300, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com', NULL),
+(84, 'Cauliflower Wings', 200, 2, 400, '', '2022-08-19  10:30AM - 11:00AM', 'Delivered', 'jdjkdjf', '9875984598', 'kdfljld-->dfjklfdj', 'john@gmail.com', NULL),
+(85, 'BBQ Chicken Pizza', 330, 5, 1650, '', '2022-08-19 10:05:39am', 'Delivered', 'khfjkdhkdjfh', '9898989898', 'khdkfhjf-->kdhfkjdhf', 'john@gmail.com', NULL),
+(86, 'Aloo Sadheko', 140, 1, 140, '', '2024-07-22 03:33:54pm', 'On Delivery', 'helloo hello', '9894564545', 'sdfd-sdfsd', 'hello@gmail.com', 'cod'),
+(87, 'Aloo Sadheko', 140, 4, 560, '', '2024-08-17  10:30AM - 11:00AM', 'Delivered', 'aarav aarav', '9898989766', 'Eos aute repudianda-Nisi modi proident ', 'aarav@gmail.com', 'cod'),
+(89, 'Aloo Tikki Burger', 200, 3, 600, '', '2024-08-19  3:00PM - 3:30PM', 'ordered', 'anjana anjana', '9898989764', 'Aspernatur distincti-Ipsum in quaerat atq', 'anjana@gmail.com', 'cod'),
+(90, 'Aloo Sadheko', 140, 4, 560, '', '2024-08-17  12:00PM - 12:30PM', 'Delivered', 'anjana anjana', '9898989764', 'Non qui excepturi et-Dolore porro est ali', 'anjana@gmail.com', 'cod'),
+(91, 'Chicken Chowmein', 180, 3, 540, '', '2024-08-17  10:30AM - 11:00AM', 'ordered', 'ankit ankit', '9898989895', 'A molestiae consequa-Dolor eu alias exerc', 'ankit@gmail.com', 'cod');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recommendations`
+--
+
+CREATE TABLE `recommendations` (
+  `rec_id` int(11) NOT NULL,
+  `uid` int(11) DEFAULT NULL,
+  `fid` int(11) DEFAULT NULL,
+  `score` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `recommendations`
+--
+
+INSERT INTO `recommendations` (`rec_id`, `uid`, `fid`, `score`) VALUES
+(4249, 8, 7, 4),
+(4250, 8, 14, 4),
+(4251, 8, 34, 4),
+(4252, 8, 28, 3),
+(4253, 10, 16, 5),
+(4254, 10, 4, 5),
+(4255, 10, 9, 4),
+(4256, 10, 2, 4),
+(4257, 10, 29, 3),
+(4258, 13, 11, 5),
+(4259, 13, 18, 5),
+(4260, 13, 4, 4.33333),
+(4261, 13, 6, 4),
+(4265, 15, 3, 5),
+(4266, 15, 12, 5),
+(4267, 15, 21, 4),
+(4268, 15, 1, 4),
+(4269, 15, 7, 4),
+(4270, 15, 34, 4),
+(4271, 15, 28, 3),
+(4272, 14, 11, 5),
+(4273, 14, 6, 4),
+(4274, 14, 14, 3);
 
 -- --------------------------------------------------------
 
@@ -205,7 +253,7 @@ CREATE TABLE `review` (
   `food` varchar(50) NOT NULL,
   `review` varchar(255) NOT NULL,
   `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `review`
@@ -301,7 +349,7 @@ CREATE TABLE `userinfo` (
   `email` varchar(255) NOT NULL,
   `contact` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userinfo`
@@ -313,7 +361,85 @@ INSERT INTO `userinfo` (`uid`, `firstname`, `lastname`, `email`, `contact`, `pas
 (3, '1z-2x-3c', '', 'admin@gmail.com', '', '21232f297a57a5a743894a0e4a801fc3'),
 (4, 'abcdefghijk', 'jlfglkj', 'jkfjgjfl', 'klfgkjfglj', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
 (5, 'aaaa', 'aaaa', 'a@aa.co', '3212321232', 'c190b5acc42be61f1b1377427a146c14576cb31d'),
-(6, 'jfdhjkds', 'jfdhkjhd', 'sjh@gjhj.djh', '9841412121', '9ed9d337d31c4361aae2009f5cb43776e5b46d2f');
+(6, 'jfdhjkds', 'jfdhkjhd', 'sjh@gjhj.djh', '9841412121', '9ed9d337d31c4361aae2009f5cb43776e5b46d2f'),
+(7, 'sam', 'bahadur', 'sam@gmail.com', '9898989767', '3bb99a770807a8f25e536d93fc014e3124f9949f'),
+(8, 'sujata', 'sujata', 'sujata@gmail.com', '9898989897', 'f6a24795d6bec292ee190d7b0a2883c48e6999c7'),
+(9, 'hari', 'hari', 'hari@gmail.com', '9898989896', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
+(10, 'nirmal', 'nirmal', 'nirmal@gmail.com', '9898989763', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
+(11, 'ram', 'ram', 'ram@gmail.com', '9898989892', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
+(12, 'anjana', 'anjana', 'anjana@gmail.com', '9898989764', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
+(13, 'aarav', 'aarav', 'aarav@gmail.com', '9898989766', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
+(14, 'ankit', 'ankit', 'ankit@gmail.com', '9898989895', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
+(15, 'garima', 'garima', 'garima@gmail.com', '9898989844', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_ratings`
+--
+
+CREATE TABLE `user_ratings` (
+  `rating_id` int(11) NOT NULL,
+  `uid` int(11) DEFAULT NULL,
+  `fid` int(11) DEFAULT NULL,
+  `rating` int(11) DEFAULT NULL,
+  `rating_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_ratings`
+--
+
+INSERT INTO `user_ratings` (`rating_id`, `uid`, `fid`, `rating`, `rating_date`) VALUES
+(1, 7, 1, 5, '2024-08-14 15:25:43'),
+(2, 7, 3, 4, '2024-08-14 15:25:43'),
+(3, 7, 5, 3, '2024-08-14 15:25:43'),
+(4, 7, 11, 4, '2024-08-14 15:25:43'),
+(5, 7, 13, 5, '2024-08-14 15:25:43'),
+(6, 8, 1, 4, '2024-08-14 15:25:43'),
+(7, 8, 2, 5, '2024-08-14 15:25:43'),
+(8, 8, 4, 3, '2024-08-14 15:25:43'),
+(9, 8, 12, 4, '2024-08-14 15:25:43'),
+(10, 8, 18, 5, '2024-08-14 15:25:43'),
+(11, 9, 1, 3, '2024-08-14 15:25:43'),
+(12, 9, 7, 5, '2024-08-14 15:25:43'),
+(13, 9, 9, 4, '2024-08-14 15:25:43'),
+(14, 9, 19, 5, '2024-08-14 15:25:43'),
+(15, 9, 20, 4, '2024-08-14 15:25:43'),
+(16, 10, 3, 5, '2024-08-14 15:25:43'),
+(17, 10, 6, 4, '2024-08-14 15:25:43'),
+(18, 10, 11, 5, '2024-08-14 15:25:43'),
+(19, 10, 14, 3, '2024-08-14 15:25:43'),
+(20, 10, 21, 4, '2024-08-14 15:25:43'),
+(21, 11, 4, 5, '2024-08-14 15:25:43'),
+(22, 11, 8, 4, '2024-08-14 15:25:43'),
+(23, 11, 15, 3, '2024-08-14 15:25:43'),
+(24, 11, 22, 5, '2024-08-14 15:25:43'),
+(25, 11, 23, 4, '2024-08-14 15:25:43'),
+(26, 12, 5, 5, '2024-08-14 15:25:43'),
+(27, 12, 13, 4, '2024-08-14 15:25:43'),
+(28, 12, 18, 5, '2024-08-14 15:25:43'),
+(29, 12, 24, 3, '2024-08-14 15:25:43'),
+(30, 12, 27, 4, '2024-08-14 15:25:43'),
+(31, 13, 1, 4, '2024-08-14 15:25:43'),
+(32, 13, 2, 5, '2024-08-14 15:25:43'),
+(33, 13, 7, 4, '2024-08-14 15:25:43'),
+(34, 13, 12, 5, '2024-08-14 15:25:43'),
+(35, 13, 28, 3, '2024-08-14 15:25:43'),
+(36, 14, 3, 5, '2024-08-14 15:25:43'),
+(37, 14, 9, 4, '2024-08-14 15:25:43'),
+(38, 14, 16, 5, '2024-08-14 15:25:43'),
+(39, 14, 21, 4, '2024-08-14 15:25:43'),
+(40, 14, 29, 3, '2024-08-14 15:25:43'),
+(41, 15, 2, 4, '2024-08-14 15:25:43'),
+(42, 15, 4, 5, '2024-08-14 15:25:43'),
+(43, 15, 6, 4, '2024-08-14 15:25:43'),
+(44, 15, 11, 5, '2024-08-14 15:25:43'),
+(45, 15, 14, 3, '2024-08-14 15:25:43'),
+(46, 13, 14, 4, '2024-08-16 15:57:15'),
+(47, 13, 34, 4, '2024-08-16 15:57:25'),
+(48, 13, 34, 4, '2024-08-16 16:23:32'),
+(49, 12, 3, 4, '2024-08-16 16:35:45');
 
 --
 -- Indexes for dumped tables
@@ -338,6 +464,13 @@ ALTER TABLE `order`
   ADD PRIMARY KEY (`oid`);
 
 --
+-- Indexes for table `recommendations`
+--
+ALTER TABLE `recommendations`
+  ADD PRIMARY KEY (`rec_id`),
+  ADD KEY `uid` (`uid`);
+
+--
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
@@ -348,6 +481,14 @@ ALTER TABLE `review`
 --
 ALTER TABLE `userinfo`
   ADD PRIMARY KEY (`uid`);
+
+--
+-- Indexes for table `user_ratings`
+--
+ALTER TABLE `user_ratings`
+  ADD PRIMARY KEY (`rating_id`),
+  ADD KEY `uid` (`uid`),
+  ADD KEY `fid` (`fid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -369,7 +510,13 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
+--
+-- AUTO_INCREMENT for table `recommendations`
+--
+ALTER TABLE `recommendations`
+  MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4275;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -381,7 +528,31 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `user_ratings`
+--
+ALTER TABLE `user_ratings`
+  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `recommendations`
+--
+ALTER TABLE `recommendations`
+  ADD CONSTRAINT `recommendations_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `userinfo` (`uid`),
+  ADD CONSTRAINT `recommendations_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `food` (`fid`);
+
+--
+-- Constraints for table `user_ratings`
+--
+ALTER TABLE `user_ratings`
+  ADD CONSTRAINT `user_ratings_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `userinfo` (`uid`),
+  ADD CONSTRAINT `user_ratings_ibfk_2` FOREIGN KEY (`fid`) REFERENCES `food` (`fid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
