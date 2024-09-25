@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2024 at 03:49 PM
+-- Generation Time: Sep 25, 2024 at 06:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -197,7 +197,8 @@ INSERT INTO `order` (`oid`, `food`, `price`, `quantity`, `total`, `instruction`,
 (87, 'Aloo Sadheko', 140, 4, 560, '', '2024-08-17  10:30AM - 11:00AM', 'Delivered', 'aarav aarav', '9898989766', 'Eos aute repudianda-Nisi modi proident ', 'aarav@gmail.com', 'cod'),
 (89, 'Aloo Tikki Burger', 200, 3, 600, '', '2024-08-19  3:00PM - 3:30PM', 'ordered', 'anjana anjana', '9898989764', 'Aspernatur distincti-Ipsum in quaerat atq', 'anjana@gmail.com', 'cod'),
 (90, 'Aloo Sadheko', 140, 4, 560, '', '2024-08-17  12:00PM - 12:30PM', 'Delivered', 'anjana anjana', '9898989764', 'Non qui excepturi et-Dolore porro est ali', 'anjana@gmail.com', 'cod'),
-(91, 'Chicken Chowmein', 180, 3, 540, '', '2024-08-17  10:30AM - 11:00AM', 'ordered', 'ankit ankit', '9898989895', 'A molestiae consequa-Dolor eu alias exerc', 'ankit@gmail.com', 'cod');
+(91, 'Chicken Chowmein', 180, 3, 540, '', '2024-08-17  10:30AM - 11:00AM', 'ordered', 'ankit ankit', '9898989895', 'A molestiae consequa-Dolor eu alias exerc', 'ankit@gmail.com', 'cod'),
+(93, 'Fried Chicken Momo', 180, 3, 540, '', '2024-09-26  10:00AM - 10:30AM', 'ordered', 'aarav aarav', '9898989766', 'lfjg-ldfj', 'aarav@gmail.com', 'cod');
 
 -- --------------------------------------------------------
 
@@ -217,29 +218,31 @@ CREATE TABLE `recommendations` (
 --
 
 INSERT INTO `recommendations` (`rec_id`, `uid`, `fid`, `score`) VALUES
-(4249, 8, 7, 4),
-(4250, 8, 14, 4),
-(4251, 8, 34, 4),
-(4252, 8, 28, 3),
-(4253, 10, 16, 5),
-(4254, 10, 4, 5),
-(4255, 10, 9, 4),
-(4256, 10, 2, 4),
-(4257, 10, 29, 3),
-(4258, 13, 11, 5),
-(4259, 13, 18, 5),
-(4260, 13, 4, 4.33333),
-(4261, 13, 6, 4),
-(4265, 15, 3, 5),
-(4266, 15, 12, 5),
-(4267, 15, 21, 4),
-(4268, 15, 1, 4),
-(4269, 15, 7, 4),
-(4270, 15, 34, 4),
-(4271, 15, 28, 3),
-(4272, 14, 11, 5),
-(4273, 14, 6, 4),
-(4274, 14, 14, 3);
+(4944, 8, 7, 4),
+(4945, 8, 14, 4),
+(4946, 8, 34, 4),
+(4947, 8, 28, 3),
+(4948, 8, 8, 3),
+(4949, 10, 16, 5),
+(4950, 10, 4, 5),
+(4951, 10, 9, 4),
+(4952, 10, 2, 4),
+(4953, 10, 29, 3),
+(4954, 13, 11, 5),
+(4955, 13, 18, 5),
+(4956, 13, 4, 4.33333),
+(4957, 13, 6, 4),
+(4958, 14, 11, 5),
+(4959, 14, 6, 4),
+(4960, 14, 14, 3),
+(4961, 15, 3, 5),
+(4962, 15, 12, 5),
+(4963, 15, 21, 4),
+(4964, 15, 1, 4),
+(4965, 15, 7, 4),
+(4966, 15, 34, 4),
+(4967, 15, 28, 3),
+(4968, 15, 8, 3);
 
 -- --------------------------------------------------------
 
@@ -334,7 +337,8 @@ INSERT INTO `review` (`rid`, `userid`, `food`, `review`, `date`) VALUES
 (73, 2, 'Cauliflower Wings ', 'perfectly seasoned and loved the taste......', '2022-08-19'),
 (74, 2, 'Cauliflower Wings ', 'very flavorful', '2022-08-19'),
 (75, 2, 'Chicken Biryani ', 'best i have ever eaten', '2022-08-19'),
-(76, 2, 'Egg Tikka Masala ', 'amazed by the thing that you get pretty large quantity', '2022-08-19');
+(76, 2, 'Egg Tikka Masala ', 'amazed by the thing that you get pretty large quantity', '2022-08-19'),
+(77, 12, 'Aloo Sadheko ', 'it was nice', '2024-09-25');
 
 -- --------------------------------------------------------
 
@@ -348,29 +352,30 @@ CREATE TABLE `userinfo` (
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `contact` varchar(25) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'user',
+  `status` varchar(255) NOT NULL DEFAULT 'blocked'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`uid`, `firstname`, `lastname`, `email`, `contact`, `password`) VALUES
-(1, 'helloo', 'hello', 'hello@gmail.com', '9894564545', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
-(2, 'john', 'wickk', 'john@gmail.com', '4566565655', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
-(3, '1z-2x-3c', '', 'admin@gmail.com', '', '21232f297a57a5a743894a0e4a801fc3'),
-(4, 'abcdefghijk', 'jlfglkj', 'jkfjgjfl', 'klfgkjfglj', 'f5ad74ad8ac432c4572d8ae64787d94d80933685'),
-(5, 'aaaa', 'aaaa', 'a@aa.co', '3212321232', 'c190b5acc42be61f1b1377427a146c14576cb31d'),
-(6, 'jfdhjkds', 'jfdhkjhd', 'sjh@gjhj.djh', '9841412121', '9ed9d337d31c4361aae2009f5cb43776e5b46d2f'),
-(7, 'sam', 'bahadur', 'sam@gmail.com', '9898989767', '3bb99a770807a8f25e536d93fc014e3124f9949f'),
-(8, 'sujata', 'sujata', 'sujata@gmail.com', '9898989897', 'f6a24795d6bec292ee190d7b0a2883c48e6999c7'),
-(9, 'hari', 'hari', 'hari@gmail.com', '9898989896', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
-(10, 'nirmal', 'nirmal', 'nirmal@gmail.com', '9898989763', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
-(11, 'ram', 'ram', 'ram@gmail.com', '9898989892', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
-(12, 'anjana', 'anjana', 'anjana@gmail.com', '9898989764', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
-(13, 'aarav', 'aarav', 'aarav@gmail.com', '9898989766', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
-(14, 'ankit', 'ankit', 'ankit@gmail.com', '9898989895', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc'),
-(15, 'garima', 'garima', 'garima@gmail.com', '9898989844', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc');
+INSERT INTO `userinfo` (`uid`, `firstname`, `lastname`, `email`, `contact`, `password`, `role`, `status`) VALUES
+(1, 'helloo', 'hello', 'hello@gmail.com', '9894564545', 'f5ad74ad8ac432c4572d8ae64787d94d80933685', 'user', 'approved'),
+(2, 'john', 'wickk', 'john@gmail.com', '4566565655', 'f5ad74ad8ac432c4572d8ae64787d94d80933685', 'user', 'approved'),
+(3, '1z-2x-3c', '', 'admin@gmail.com', '', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'approved'),
+(5, 'aaaa', 'aaaa', 'a@aa.co', '3212321232', 'c190b5acc42be61f1b1377427a146c14576cb31d', 'user', 'approved'),
+(6, 'jfdhjkds', 'jfdhkjhd', 'sjh@gjhj.djh', '9841412121', '9ed9d337d31c4361aae2009f5cb43776e5b46d2f', 'user', 'approved'),
+(7, 'sam', 'bahadur', 'sam@gmail.com', '9898989767', '3bb99a770807a8f25e536d93fc014e3124f9949f', 'user', 'approved'),
+(8, 'sujata', 'sujata', 'sujata@gmail.com', '9898989897', 'f6a24795d6bec292ee190d7b0a2883c48e6999c7', 'user', 'approved'),
+(9, 'hari', 'hari', 'hari@gmail.com', '9898989896', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'approved'),
+(10, 'nirmal', 'nirmal', 'nirmal@gmail.com', '9898989763', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'approved'),
+(11, 'ram', 'ram', 'ram@gmail.com', '9898989892', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'approved'),
+(12, 'anjana', 'anjana', 'anjana@gmail.com', '9898989764', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'approved'),
+(13, 'aarav', 'aarav', 'aarav@gmail.com', '9898989766', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'approved'),
+(14, 'ankit', 'ankit', 'ankit@gmail.com', '9898989895', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'blocked'),
+(15, 'garima', 'garima', 'garima@gmail.com', '9898989844', '2afbcf9cd4391aaad722822c9ccb94ed7fff64fc', 'user', 'approved');
 
 -- --------------------------------------------------------
 
@@ -439,7 +444,8 @@ INSERT INTO `user_ratings` (`rating_id`, `uid`, `fid`, `rating`, `rating_date`) 
 (46, 13, 14, 4, '2024-08-16 15:57:15'),
 (47, 13, 34, 4, '2024-08-16 15:57:25'),
 (48, 13, 34, 4, '2024-08-16 16:23:32'),
-(49, 12, 3, 4, '2024-08-16 16:35:45');
+(49, 12, 3, 4, '2024-08-16 16:35:45'),
+(50, 13, 8, 3, '2024-09-25 15:19:14');
 
 --
 -- Indexes for dumped tables
@@ -510,19 +516,19 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `recommendations`
 --
 ALTER TABLE `recommendations`
-  MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4275;
+  MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4969;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `userinfo`
@@ -534,7 +540,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `user_ratings`
 --
 ALTER TABLE `user_ratings`
-  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Constraints for dumped tables
