@@ -659,7 +659,7 @@ session_start();
 						url: 'store-rating.php',
 						data: {
 							rating: rating,
-							userid: <?php echo $_SESSION['userid'] ?>,
+							userid: <?php if(isset($_SESSION['userid'])) echo $_SESSION['userid']; else echo "0"  ?>,
 							fid: fid
 						},
 						cache: false,

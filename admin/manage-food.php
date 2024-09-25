@@ -55,7 +55,8 @@
         <h4 style="font-size: 17px;font-weight: 600;color: rgb(206, 240, 253);">ADMIN</h4>
         <br>
         <div class="innerside">
-            <a href="dashboard.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
+            <a href="user.php">User</a>
             <a href="add-category.php">Add Category</a>
             <a href="manage-category.php">Manage Category</a>
             <a href="add-food.php">Add Food</a>

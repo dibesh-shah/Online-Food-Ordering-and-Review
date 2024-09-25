@@ -38,6 +38,7 @@
         <br>
         <div class="innerside">
             <a href="dashboard.php">Dashboard</a>
+            <a href="user.php">User</a>
             <a href="add-category.php">Add Category</a>
             <a href="manage-category.php">Manage Category</a>
             <a href="add-food.php">Add Food</a>

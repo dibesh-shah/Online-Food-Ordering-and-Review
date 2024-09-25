@@ -33,6 +33,9 @@
 				if ($res == "invalid") {
 				   echo "<div class='create-acc' style='color: green; background-color:red; margin-bottom:15px; padding:1% 1.5%;'>Invalid Email or Password.</div>";
 				}			
+				if ($res == "blocked") {
+				   echo "<div class='create-acc' style='color: green; background-color:red; margin-bottom:15px; padding:1% 1.5%;'>Your account is pending approval. Please wait until the admin approves your account</div>";
+				}			
 			}
 	?>
 
